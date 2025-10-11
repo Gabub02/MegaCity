@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mega City RP — Regelwerk & Info</title>
   <meta name="description" content="Mega City RP — Clean, realistisches GTA V Roleplay. Regelwerk, Team & Kontakt." />
-  <script src="https://discord.gg/nwmmTfnz" ></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     // Tailwind custom colors
     tailwind.config = {
