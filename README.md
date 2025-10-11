@@ -1,4 +1,3 @@
-# Mega-City-RP.github.io
 <!--
   Mega City RP - OnePage
   - Tailwind CSS (CDN) used (no build step required)
