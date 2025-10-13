@@ -6,7 +6,7 @@
   - Save this file as index.html and upload to any static host (Netlify, GitHub Pages, Vercel, etc.)
 -->
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="utf-8" />
