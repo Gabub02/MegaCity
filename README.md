@@ -49,7 +49,7 @@
         <a href="#rules" class="hover:text-gold">Regeln</a>
         <a href="#about" class="hover:text-gold">Über uns</a>
         <a href="#team" class="hover:text-gold">Team</a>
-        <a href="DISCORD_INVITE_HERE" target="_blank" class="inline-flex items-center gap-2 bg-gold/10 text-gold px-4 py-2 rounded-lg border border-gold/20 hover:bg-gold/20">Discord</a>
+        <a href="https://discord.gg/nwmmTfnz" target="_blank" class="inline-flex items-center gap-2 bg-gold/10 text-gold px-4 py-2 rounded-lg border border-gold/20 hover:bg-gold/20">Discord</a>
       </div>
       <div class="md:hidden">
         <button id="mobileBtn" class="p-2 rounded-md glass">☰</button>
