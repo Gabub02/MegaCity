@@ -59,7 +59,7 @@
       <a href="#rules" class="block py-2">Regeln</a>
       <a href="#about" class="block py-2">Über uns</a>
       <a href="#team" class="block py-2">Team</a>
-      <a href="DISCORD_INVITE_HERE" target="_blank" class="block py-2">Discord</a>
+      <a href="https://discord.gg/nwmmTfnz" target="_blank" class="block py-2">Discord</a>
     </div>
   </header>
 
@@ -71,7 +71,7 @@
         <p class="mt-4 text-lg text-gray-300 max-w-2xl">Cleanes, realistisches GTA V Roleplay – fair moderiert, mit Fokus auf Immersion und guter Community. Lies das Regelwerk, bevor du spielst.</p>
         <div class="mt-6 flex gap-3">
           <a href="#rules" class="px-6 py-3 bg-gold text-black rounded-lg font-semibold shadow">Regelwerk lesen</a>
-          <a href="DISCORD_INVITE_HERE" target="_blank" class="px-6 py-3 border border-gold/30 rounded-lg">Discord beitreten</a>
+          <a href="https://discord.gg/nwmmTfnz" target="_blank" class="px-6 py-3 border border-gold/30 rounded-lg">Discord beitreten</a>
         </div>
       </div>
       <div class="flex-1">
