@@ -49,32 +49,32 @@
   <div class="bg-animate"></div>
 
   <!-- HEADER -->
-  <header class="fixed w-full z-50 bg-black/70 backdrop-blur-md border-b border-gray-800">
-    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <img src="mlogo42.png" alt="Mega City RP Logo" class="h-10 w-10 rounded-md object-cover ring-1 ring-gold/30" />
-        <div>
-          <a href="#hero" class="text-lg font-semibold glow">Mega City RP</a>
-          <p class="text-xs text-gray-400 -mt-0.5">Clean · Realistisch · Fair</p>
-        </div>
+<header id="navbar" class="fixed w-full z-50 bg-black/70 backdrop-blur-md border-b border-gray-800 transition-all duration-500">
+  <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <img src="mlogo42.png" alt="Mega City RP Logo" class="h-10 w-10 rounded-md object-cover ring-1 ring-gold/30" />
+      <div>
+        <a href="#hero" class="text-lg font-semibold glow">Mega City RP</a>
+        <p class="text-xs text-gray-400 -mt-0.5">Clean · Realistisch · Fair</p>
       </div>
-      <div class="hidden md:flex gap-8 items-center text-sm">
-        <a href="#features" class="hover:text-gold transition">Features</a>
-        <a href="regeln.html" class="hover:text-gold transition">Regeln</a>
-        <a href="#about" class="hover:text-gold transition">Über uns</a>
-        <a href="#team" class="hover:text-gold transition">Team</a>
-        <a href="https://discord.gg/pGM8hT8tS6" target="_blank" class="px-4 py-2 border border-gold/40 text-gold rounded-lg hover:bg-gold hover:text-black transition">Discord</a>
-      </div>
-      <button id="mobileBtn" class="md:hidden p-2 text-xl">☰</button>
-    </nav>
-    <div id="mobileMenu" class="hidden md:hidden bg-black/90 text-center py-3">
-      <a href="#features" class="block py-2 hover:text-gold">Features</a>
-      <a href="regeln.html" class="block py-2 hover:text-gold">Regeln</a>
-      <a href="#about" class="block py-2 hover:text-gold">Über uns</a>
-      <a href="#team" class="block py-2 hover:text-gold">Team</a>
-      <a href="https://discord.gg/pGM8hT8tS6" target="_blank" class="block py-2 text-gold">Discord</a>
     </div>
-  </header>
+    <div class="hidden md:flex gap-8 items-center text-sm">
+      <a href="#features" class="hover:text-gold transition">Features</a>
+      <a href="regeln.html" class="hover:text-gold transition">Regeln</a>
+      <a href="#about" class="hover:text-gold transition">Über uns</a>
+      <a href="#team" class="hover:text-gold transition">Team</a>
+      <a href="https://discord.gg/pGM8hT8tS6" target="_blank" class="px-4 py-2 border border-gold/40 text-gold rounded-lg hover:bg-gold hover:text-black transition">Discord</a>
+    </div>
+    <button id="mobileBtn" class="md:hidden p-2 text-xl">☰</button>
+  </nav>
+  <div id="mobileMenu" class="hidden md:hidden bg-black/90 text-center py-3">
+    <a href="#features" class="block py-2 hover:text-gold">Features</a>
+    <a href="regeln.html" class="block py-2 hover:text-gold">Regeln</a>
+    <a href="#about" class="block py-2 hover:text-gold">Über uns</a>
+    <a href="#team" class="block py-2 hover:text-gold">Team</a>
+    <a href="https://discord.gg/pGM8hT8tS6" target="_blank" class="block py-2 text-gold">Discord</a>
+  </div>
+</header>
 
   <!-- HERO -->
   <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-6">
@@ -312,3 +312,39 @@
   </script>
 </body>
 </html>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('mobileBtn').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+
+    // Scroll fade-in
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Navbar animation on scroll
+    const navbar = document.getElementById('navbar');
+    let lastScrollY = 0;
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-black/90', 'shadow-lg');
+        navbar.classList.remove('bg-black/70');
+      } else {
+        navbar.classList.remove('bg-black/90', 'shadow-lg');
+        navbar.classList.add('bg-black/70');
+      }
+
+      // Optional: hide when scrolling down, show when scrolling up
+      if (window.scrollY > lastScrollY && window.scrollY > 200) {
+        navbar.style.transform = 'translateY(-100%)';
+      } else {
+        navbar.style.transform = 'translateY(0)';
+      }
+      lastScrollY = window.scrollY;
+    });
+  </script>
+
