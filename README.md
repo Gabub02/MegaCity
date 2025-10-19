@@ -348,3 +348,6 @@
     });
   </script>
 
+/(index.html)
+(regeln.html)
+(mlogo42.png)
