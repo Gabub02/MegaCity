@@ -312,6 +312,7 @@
   </script>
 </body>
 </html>
+  
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     document.getElementById('mobileBtn').addEventListener('click', () => {
@@ -347,7 +348,3 @@
       lastScrollY = window.scrollY;
     });
   </script>
-
-/(index.html)
-(regeln.html)
-(mlogo42.png)
