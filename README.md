@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="utf-8" />
@@ -23,11 +22,10 @@
   <style>
     html { 
       scroll-behavior: smooth; 
-      scroll-padding-top: 80px; /* Wichtig für korrekte Scroll-Position */
+      scroll-padding-top: 80px;
     }
     body { 
       overflow-x: hidden; 
-      padding-top: 0; /* Header-Höhe ausgleichen */
     }
     .glass { 
       background: rgba(255,255,255,0.05); 
@@ -66,12 +64,11 @@
       100% { background-position: 100% 0%, 0% 100%; }
     }
     
-    /* Korrekte Positionierung für Anker-Links */
     section {
       position: relative;
     }
     #features, #about, #rules, #team {
-      scroll-margin-top: 80px; /* Gleicht fixed Header aus */
+      scroll-margin-top: 80px;
     }
   </style>
 </head>
@@ -79,7 +76,7 @@
 
   <div class="bg-animate"></div>
 
-  <!-- HEADER - FIXED PROBLEM -->
+  <!-- HEADER -->
   <header id="navbar" class="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-gray-800 transition-all duration-500">
     <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
       <div class="flex items-center gap-3">
@@ -107,9 +104,9 @@
     </div>
   </header>
 
-  <!-- HERO - MIT PADDING TOP FÜR FIXED HEADER -->
+  <!-- HERO - KLEINERE ÜBERSCHRIFT -->
   <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20">
-    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-4 glow fade-in">Mega City RP</h1>
+    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 glow fade-in">Mega City RP</h1>
     <p class="max-w-2xl text-gray-300 text-lg mb-8 fade-in">Tauche ein in eine lebendige Stadt voller Geschichten, Emotionen und realistischem RP.  
       Dein Abenteuer beginnt hier — fair, clean & immersiv.</p>
     <div class="flex flex-wrap justify-center gap-4 fade-in">
