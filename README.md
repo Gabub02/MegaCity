@@ -91,7 +91,7 @@
         <a href="regeln.html" class="hover:text-gold transition py-2">Regeln</a>
         <a href="#about" class="hover:text-gold transition py-2">Über uns</a>
         <a href="#team" class="hover:text-gold transition py-2">Team</a>
-        <a href="https://discord.gg/pGM8hT8tS6" target="_blank" class="px-4 py-2 border border-gold/40 text-gold rounded-lg hover:bg-gold hover:text-black transition">Discord</a>
+        <a href="https://discord.gg/megacity" target="_blank" class="px-4 py-2 border border-gold/40 text-gold rounded-lg hover:bg-gold hover:text-black transition">Discord</a>
       </div>
       <button id="mobileBtn" class="md:hidden p-2 text-xl hover:text-gold transition">☰</button>
     </nav>
@@ -100,7 +100,7 @@
       <a href="regeln.html" class="block py-3 hover:text-gold transition" onclick="closeMobileMenu()">Regeln</a>
       <a href="#about" class="block py-3 hover:text-gold transition" onclick="closeMobileMenu()">Über uns</a>
       <a href="#team" class="block py-3 hover:text-gold transition" onclick="closeMobileMenu()">Team</a>
-      <a href="https://discord.gg/pGM8hT8tS6" target="_blank" class="block py-3 text-gold hover:text-yellow-300 transition">Discord</a>
+      <a href="https://discord.gg/megacity" target="_blank" class="block py-3 text-gold hover:text-yellow-300 transition">Discord</a>
     </div>
   </header>
 
@@ -111,7 +111,7 @@
       Dein Abenteuer beginnt hier — fair, clean & immersiv.</p>
     <div class="flex flex-wrap justify-center gap-4 fade-in">
       <a href="regeln.html" class="px-6 py-3 bg-gold text-black font-semibold rounded-lg hover:bg-yellow-400 transition">Regelwerk</a>
-      <a href="https://discord.gg/pGM8hT8tS6" target="_blank" class="px-6 py-3 border border-gold/40 rounded-lg hover:bg-gold/10 transition">Discord</a>
+      <a href="https://discord.gg/megacity" target="_blank" class="px-6 py-3 border border-gold/40 rounded-lg hover:bg-gold/10 transition">Discord</a>
     </div>
   </section>
 
