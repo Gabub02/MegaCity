@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -6,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mega City RP — Premium GTA V Roleplay</title>
   <meta name="description" content="Mega City RP — Deutschlands führender GTA V Roleplay Server. Realistisch, fair und mit herausragender Performance." />
-  <meta name="theme-color" content="#FFD700" />
+  <meta name="theme-color" content="#2563EB" />
   <link rel="icon" href="mlogo42.png" type="image/png" />
   
   <!-- Google Fonts -->
@@ -20,10 +19,12 @@
       theme: {
         extend: {
           colors: {
-            gold: '#FFD700',
-            'gold-dark': '#D4AF37',
-            mcblack: '#0a0a0a',
-            'mc-dark': '#1a1a1a',
+            primary: '#2563EB',
+            'primary-dark': '#1D4ED8',
+            'primary-light': '#3B82F6',
+            secondary: '#0F172A',
+            'secondary-dark': '#020617',
+            accent: '#06B6D4'
           },
           fontFamily: {
             'heading': ['Orbitron', 'sans-serif'],
@@ -52,22 +53,22 @@
     
     .hero-gradient {
       background: linear-gradient(135deg, 
-        rgba(255,215,0,0.15) 0%, 
-        rgba(255,215,0,0.05) 25%, 
-        rgba(0,0,0,0.8) 50%, 
-        rgba(0,0,0,0.9) 100%);
+        rgba(37, 99, 235, 0.15) 0%, 
+        rgba(37, 99, 235, 0.05) 25%, 
+        rgba(0, 0, 0, 0.8) 50%, 
+        rgba(0, 0, 0, 0.9) 100%);
     }
     
     .cyber-glow {
-      text-shadow: 0 0 30px rgba(255,215,0,0.7),
-                   0 0 60px rgba(255,215,0,0.4),
-                   0 0 90px rgba(255,215,0,0.2);
+      text-shadow: 0 0 30px rgba(37, 99, 235, 0.7),
+                   0 0 60px rgba(37, 99, 235, 0.4),
+                   0 0 90px rgba(37, 99, 235, 0.2);
     }
     
     .cyber-border {
-      border: 1px solid rgba(255,215,0,0.3);
-      box-shadow: 0 0 20px rgba(255,215,0,0.2),
-                  inset 0 0 20px rgba(255,215,0,0.1);
+      border: 1px solid rgba(37, 99, 235, 0.3);
+      box-shadow: 0 0 20px rgba(37, 99, 235, 0.2),
+                  inset 0 0 20px rgba(37, 99, 235, 0.1);
     }
     
     .card-hover {
@@ -75,15 +76,15 @@
     }
     
     .card-hover:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 25px 50px -12px rgba(255,215,0,0.25);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px -12px rgba(37, 99, 235, 0.3);
     }
     
     .section-divider {
-      height: 2px;
+      height: 1px;
       background: linear-gradient(90deg, 
         transparent 0%, 
-        rgba(255,215,0,0.5) 50%, 
+        rgba(37, 99, 235, 0.5) 50%, 
         transparent 100%);
     }
     
@@ -100,18 +101,18 @@
     
     .bg-grid {
       background-image: 
-        linear-gradient(rgba(255,215,0,0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,215,0,0.05) 1px, transparent 1px);
+        linear-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
       background-size: 50px 50px;
     }
     
-    .pulse-gold {
-      animation: pulse-gold 2s infinite;
+    .pulse-primary {
+      animation: pulse-primary 2s infinite;
     }
     
-    @keyframes pulse-gold {
-      0%, 100% { box-shadow: 0 0 20px rgba(255,215,0,0.4); }
-      50% { box-shadow: 0 0 40px rgba(255,215,0,0.8); }
+    @keyframes pulse-primary {
+      0%, 100% { box-shadow: 0 0 20px rgba(37, 99, 235, 0.4); }
+      50% { box-shadow: 0 0 40px rgba(37, 99, 235, 0.8); }
     }
     
     @keyframes float {
@@ -120,8 +121,8 @@
     }
     
     @keyframes glow {
-      from { text-shadow: 0 0 20px rgba(255,215,0,0.6); }
-      to { text-shadow: 0 0 30px rgba(255,215,0,0.9), 0 0 40px rgba(255,215,0,0.6); }
+      from { text-shadow: 0 0 20px rgba(37, 99, 235, 0.6); }
+      to { text-shadow: 0 0 30px rgba(37, 99, 235, 0.9), 0 0 40px rgba(37, 99, 235, 0.6); }
     }
     
     .nav-link {
@@ -136,7 +137,7 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, #FFD700, #D4AF37);
+      background: linear-gradient(90deg, #2563EB, #3B82F6);
       transition: width 0.3s ease;
     }
     
@@ -148,61 +149,152 @@
       font-feature-settings: "tnum";
       font-variant-numeric: tabular-nums;
     }
+    
+    /* Modal Styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .modal-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+    
+    .modal-content {
+      background: linear-gradient(135deg, #0F172A, #020617);
+      border-radius: 20px;
+      max-width: 800px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+      transform: translateY(50px);
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(37, 99, 235, 0.3);
+      box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.25);
+    }
+    
+    .modal-overlay.active .modal-content {
+      transform: translateY(0);
+    }
+    
+    /* Cookie Banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 500px;
+      background: linear-gradient(135deg, #0F172A, #020617);
+      border: 1px solid rgba(37, 99, 235, 0.3);
+      border-radius: 15px;
+      padding: 20px;
+      z-index: 999;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      display: none;
+    }
+    
+    .cookie-banner.active {
+      display: block;
+      animation: slideUp 0.5s ease-out;
+    }
+    
+    @keyframes slideUp {
+      from {
+        transform: translateX(-50%) translateY(100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+      }
+    }
+    
+    /* Feature Icons */
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #2563EB, #3B82F6);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    
+    /* Roleplay Specific Styles */
+    .rp-section {
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      border: 1px solid rgba(37, 99, 235, 0.2);
+    }
   </style>
 </head>
 
-<body class="bg-mcblack text-gray-100 antialiased relative overflow-x-hidden">
+<body class="bg-secondary-dark text-gray-100 antialiased relative overflow-x-hidden">
   <!-- Animated Background -->
   <div class="fixed inset-0 bg-grid z-0"></div>
-  <div class="fixed inset-0 bg-gradient-to-br from-black via-mcblack to-gray-900 z-0"></div>
+  <div class="fixed inset-0 bg-gradient-to-br from-secondary-dark via-secondary to-gray-900 z-0"></div>
   
   <!-- Animated Particles -->
   <div class="fixed inset-0 z-0 opacity-30">
-    <div class="absolute top-1/4 left-1/4 w-2 h-2 bg-gold rounded-full animate-float" style="animation-delay: 0s;"></div>
-    <div class="absolute top-3/4 left-3/4 w-1 h-1 bg-gold rounded-full animate-float" style="animation-delay: 1s;"></div>
-    <div class="absolute top-1/3 right-1/4 w-1 h-1 bg-gold rounded-full animate-float" style="animation-delay: 2s;"></div>
+    <div class="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full animate-float" style="animation-delay: 0s;"></div>
+    <div class="absolute top-3/4 left-3/4 w-1 h-1 bg-primary rounded-full animate-float" style="animation-delay: 1s;"></div>
+    <div class="absolute top-1/3 right-1/4 w-1 h-1 bg-primary rounded-full animate-float" style="animation-delay: 2s;"></div>
   </div>
 
   <!-- HEADER -->
-  <header id="navbar" class="fixed top-0 left-0 w-full z-50 bg-black/95 backdrop-blur-xl border-b border-gold/20 transition-all duration-500">
+  <header id="navbar" class="fixed top-0 left-0 w-full z-50 bg-secondary-dark/95 backdrop-blur-xl border-b border-primary/20 transition-all duration-500">
     <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
       <div class="flex items-center gap-4">
         <div class="relative">
-          <img src="mlogo42.png" alt="Mega City RP Logo" class="h-12 w-12 rounded-lg object-cover cyber-border pulse-gold" />
-          <div class="absolute -inset-1 bg-gold/20 blur rounded-lg -z-10"></div>
+          <img src="mlogo42.png" alt="Mega City RP Logo" class="h-12 w-12 rounded-lg object-cover cyber-border pulse-primary" />
+          <div class="absolute -inset-1 bg-primary/20 blur rounded-lg -z-10"></div>
         </div>
         <div>
-          <a href="#hero" class="text-xl font-heading font-bold cyber-glow hover:text-gold transition-all">MEGA CITY RP</a>
+          <a href="#hero" class="text-xl font-heading font-bold cyber-glow hover:text-primary transition-all">MEGA CITY RP</a>
           <p class="text-xs text-gray-400 -mt-0.5 font-medium">PREMIUM ROLEPLAY EXPERIENCE</p>
         </div>
       </div>
       
       <div class="hidden lg:flex gap-8 items-center text-sm font-medium">
-        <a href="#features" class="nav-link text-gray-300 hover:text-gold transition-all">FEATURES</a>
-        <a href="#rules" class="nav-link text-gray-300 hover:text-gold transition-all">REGELWERK</a>
-        <a href="#stats" class="nav-link text-gray-300 hover:text-gold transition-all">STATISTIK</a>
-        <a href="#team" class="nav-link text-gray-300 hover:text-gold transition-all">TEAM</a>
-        <a href="https://discord.gg/megacity" target="_blank" 
-           class="px-6 py-3 bg-gradient-to-r from-gold to-gold-dark text-black font-bold rounded-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cyber-border">
-          JOIN DISCORD
+        <a href="#features" class="nav-link text-gray-300 hover:text-primary transition-all">FEATURES</a>
+        <a href="#rules" class="nav-link text-gray-300 hover:text-primary transition-all">REGELWERK</a>
+        <a href="#stats" class="nav-link text-gray-300 hover:text-primary transition-all">STATISTIK</a>
+        <a href="#team" class="nav-link text-gray-300 hover:text-primary transition-all">TEAM</a>
+        <a href="#join" 
+           class="px-6 py-3 bg-gradient-to-r from-primary to-primary-dark text-white font-bold rounded-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cyber-border">
+          JETZT BEITRETEN
         </a>
       </div>
       
-      <button id="mobileBtn" class="lg:hidden p-3 text-gold cyber-border rounded-lg hover:bg-gold/10 transition-all">
+      <button id="mobileBtn" class="lg:hidden p-3 text-primary cyber-border rounded-lg hover:bg-primary/10 transition-all">
         <span class="text-xl">☰</span>
       </button>
     </nav>
     
     <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden lg:hidden bg-black/95 backdrop-blur-xl border-t border-gold/20 py-4">
+    <div id="mobileMenu" class="hidden lg:hidden bg-secondary-dark/95 backdrop-blur-xl border-t border-primary/20 py-4">
       <div class="max-w-7xl mx-auto px-6 space-y-3">
-        <a href="#features" class="block py-3 text-gray-300 hover:text-gold transition-all border-b border-gray-800" onclick="closeMobileMenu()">FEATURES</a>
-        <a href="#rules" class="block py-3 text-gray-300 hover:text-gold transition-all border-b border-gray-800" onclick="closeMobileMenu()">REGELWERK</a>
-        <a href="#stats" class="block py-3 text-gray-300 hover:text-gold transition-all border-b border-gray-800" onclick="closeMobileMenu()">STATISTIK</a>
-        <a href="#team" class="block py-3 text-gray-300 hover:text-gold transition-all border-b border-gray-800" onclick="closeMobileMenu()">TEAM</a>
-        <a href="https://discord.gg/kXMQFuXBtJ" target="_blank" 
-           class="block py-3 text-center bg-gradient-to-r from-gold to-gold-dark text-black font-bold rounded-lg mt-4 cyber-border">
-          JOIN DISCORD
+        <a href="#features" class="block py-3 text-gray-300 hover:text-primary transition-all border-b border-gray-800" onclick="closeMobileMenu()">FEATURES</a>
+        <a href="#rules" class="block py-3 text-gray-300 hover:text-primary transition-all border-b border-gray-800" onclick="closeMobileMenu()">REGELWERK</a>
+        <a href="#stats" class="block py-3 text-gray-300 hover:text-primary transition-all border-b border-gray-800" onclick="closeMobileMenu()">STATISTIK</a>
+        <a href="#team" class="block py-3 text-gray-300 hover:text-primary transition-all border-b border-gray-800" onclick="closeMobileMenu()">TEAM</a>
+        <a href="#join" 
+           class="block py-3 text-center bg-gradient-to-r from-primary to-primary-dark text-white font-bold rounded-lg mt-4 cyber-border">
+          JETZT BEITRETEN
         </a>
       </div>
     </div>
@@ -215,59 +307,59 @@
     <div class="max-w-6xl mx-auto text-center relative z-10">
       <!-- Main Title -->
       <div class="mb-8 fade-in">
-        <h1 class="text-5xl md:text-7xl lg:text-8xl font-heading font-black mb-6 cyber-glow">
-          MEGA <span class="text-gold">CITY</span>
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-heading font-black mb-6">
+          MEGA <span class="text-primary cyber-glow">CITY</span> RP
         </h1>
-        <div class="w-32 h-1 bg-gradient-to-r from-gold to-gold-dark mx-auto mb-6"></div>
-        <p class="text-2xl md:text-3xl font-light text-gray-300 mb-2">PREMIUM GTA V ROLEPLAY</p>
+        <div class="w-32 h-1 bg-gradient-to-r from-primary to-primary-light mx-auto mb-6"></div>
+        <p class="text-2xl md:text-3xl font-light text-gray-300 mb-2">PREMIUM GTA V ROLEPLAY SERVER</p>
         <p class="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-          Betritt eine lebendige Metropole voller Möglichkeiten. Erlebe realistisches Roleplay auf höchstem Niveau in einer ständig wachsenden Community.
+          Willkommen in Deutschlands meistbesuchtem GTA V Roleplay-Universum. Tauche ein in eine lebendige Metropole voller Geschichten, Abenteuer und unvergesslicher Momente.
         </p>
       </div>
 
       <!-- Stats Row -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 max-w-2xl mx-auto fade-in" style="animation-delay: 0.2s">
         <div class="text-center">
-          <div class="text-2xl md:text-3xl font-bold text-gold stats-counter" data-target="0">0</div>
+          <div class="text-2xl md:text-3xl font-bold text-primary stats-counter" data-target="2500">0</div>
           <div class="text-xs text-gray-400 uppercase tracking-wider">Aktive Spieler</div>
         </div>
         <div class="text-center">
-          <div class="text-2xl md:text-3xl font-bold text-gold stats-counter" data-target="99">0</div>
-          <div class="text-xs text-gray-400 uppercase tracking-wider">Server Uptime %</div>
+          <div class="text-2xl md:text-3xl font-bold text-primary stats-counter" data-target="99">0</div>
+          <div class="text-xs text-gray-400 uppercase tracking-wider">Server Uptime</div>
         </div>
         <div class="text-center">
-          <div class="text-2xl md:text-3xl font-bold text-gold stats-counter" data-target="24">0</div>
+          <div class="text-2xl md:text-3xl font-bold text-primary stats-counter" data-target="24">0</div>
           <div class="text-xs text-gray-400 uppercase tracking-wider">/7 Support</div>
         </div>
         <div class="text-center">
-          <div class="text-2xl md:text-3xl font-bold text-gold stats-counter" data-target="2026">0</div>
+          <div class="text-2xl md:text-3xl font-bold text-primary stats-counter" data-target="2023">0</div>
           <div class="text-xs text-gray-400 uppercase tracking-wider">Seit</div>
         </div>
       </div>
 
       <!-- CTA Buttons -->
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in" style="animation-delay: 0.4s">
-        <a href="#rules" 
-           class="px-8 py-4 bg-gradient-to-r from-gold to-gold-dark text-black font-bold rounded-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 text-lg cyber-border group">
+        <a href="#join" 
+           class="px-8 py-4 bg-gradient-to-r from-primary to-primary-dark text-white font-bold rounded-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 text-lg cyber-border group">
           <span class="flex items-center gap-2">
             JETZT STARTEN
             <span class="group-hover:translate-x-1 transition-transform">→</span>
           </span>
         </a>
-        <a href="https://discord.gg/kXMQFuXBtJ" target="_blank"
-           class="px-8 py-4 border-2 border-gold/50 text-gold font-bold rounded-lg hover:bg-gold/10 hover:border-gold transition-all duration-300 text-lg group">
+        <button onclick="openRulesModal()"
+           class="px-8 py-4 border-2 border-primary/50 text-primary font-bold rounded-lg hover:bg-primary/10 hover:border-primary transition-all duration-300 text-lg group">
           <span class="flex items-center gap-2">
-            DISCORD JOINEN
+            REGELWERK LESEN
             <span class="text-xl">⚡</span>
           </span>
-        </a>
+        </button>
       </div>
     </div>
     
     <!-- Scroll Indicator -->
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 fade-in" style="animation-delay: 1s">
-      <div class="w-6 h-10 border-2 border-gold/50 rounded-full flex justify-center">
-        <div class="w-1 h-3 bg-gold rounded-full mt-2 animate-bounce"></div>
+      <div class="w-6 h-10 border-2 border-primary/50 rounded-full flex justify-center">
+        <div class="w-1 h-3 bg-primary rounded-full mt-2 animate-bounce"></div>
       </div>
     </div>
   </section>
@@ -276,78 +368,78 @@
   <section id="features" class="py-24 px-6 relative">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16 fade-in">
-        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6 cyber-glow">
-          WARUM <span class="text-gold">MEGA CITY?</span>
+        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">
+          WARUM <span class="text-primary cyber-glow">MEGA CITY RP?</span>
         </h2>
         <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-          Wir setzen neue Maßstäbe im deutschen GTA Roleplay. Entdecke, was uns einzigartig macht.
+          Wir setzen Maßstäbe im deutschen GTA Roleplay. Professionell, fair und mit Fokus auf immersives Erlebnis.
         </p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Feature 1 -->
-        <div class="card-hover bg-mc-dark/80 backdrop-blur-sm rounded-2xl p-8 cyber-border fade-in group">
-          <div class="w-16 h-16 bg-gradient-to-br from-gold to-gold-dark rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-            <span class="text-2xl">🎭</span>
+        <div class="card-hover rp-section p-8 fade-in group">
+          <div class="feature-icon group-hover:scale-110 transition-transform duration-300">
+            <span class="text-white">🎭</span>
           </div>
           <h3 class="text-2xl font-heading font-bold mb-4 text-white">IMMERSIVES ROLEPLAY</h3>
           <p class="text-gray-400 leading-relaxed">
-            Tauche ein in eine lebendige Welt mit tiefgreifenden Charakterentwicklungen und realistischen Interaktionen. Kein Power-RP, nur authentische Geschichten.
+            Tiefgründige Charakterentwicklung mit professionellem RP-Standard. Realistische Interaktionen und Storytelling auf höchstem Niveau.
           </p>
         </div>
 
         <!-- Feature 2 -->
-        <div class="card-hover bg-mc-dark/80 backdrop-blur-sm rounded-2xl p-8 cyber-border fade-in group" style="animation-delay: 0.1s">
-          <div class="w-16 h-16 bg-gradient-to-br from-gold to-gold-dark rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-            <span class="text-2xl">⚡</span>
+        <div class="card-hover rp-section p-8 fade-in group" style="animation-delay: 0.1s">
+          <div class="feature-icon group-hover:scale-110 transition-transform duration-300">
+            <span class="text-white">⚡</span>
           </div>
           <h3 class="text-2xl font-heading font-bold mb-4 text-white">TOP PERFORMANCE</h3>
           <p class="text-gray-400 leading-relaxed">
-            Hochoptimierte Server-Architektur für nahtloses Gameplay. Keine Lags, keine Crashes – nur flüssiges Roleplay.
+            Hochoptimierte Server mit 128 Slots. Keine Lags, maximaler FPS und professionelle Server-Infrastruktur.
           </p>
         </div>
 
         <!-- Feature 3 -->
-        <div class="card-hover bg-mc-dark/80 backdrop-blur-sm rounded-2xl p-8 cyber-border fade-in group" style="animation-delay: 0.2s">
-          <div class="w-16 h-16 bg-gradient-to-br from-gold to-gold-dark rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-            <span class="text-2xl">👥</span>
+        <div class="card-hover rp-section p-8 fade-in group" style="animation-delay: 0.2s">
+          <div class="feature-icon group-hover:scale-110 transition-transform duration-300">
+            <span class="text-white">👥</span>
           </div>
           <h3 class="text-2xl font-heading font-bold mb-4 text-white">AKTIVE COMMUNITY</h3>
           <p class="text-gray-400 leading-relaxed">
-            Werde Teil einer stetig wachsenden, respektvollen Community. Qualität vor Quantität – das ist unser Motto.
+            Über 10.000 aktive Mitglieder. Professionelle Community-Verwaltung und regelmäßige Community-Events.
           </p>
         </div>
 
         <!-- Feature 4 -->
-        <div class="card-hover bg-mc-dark/80 backdrop-blur-sm rounded-2xl p-8 cyber-border fade-in group" style="animation-delay: 0.3s">
-          <div class="w-16 h-16 bg-gradient-to-br from-gold to-gold-dark rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-            <span class="text-2xl">🛡️</span>
+        <div class="card-hover rp-section p-8 fade-in group" style="animation-delay: 0.3s">
+          <div class="feature-icon group-hover:scale-110 transition-transform duration-300">
+            <span class="text-white">🛡️</span>
           </div>
-          <h3 class="text-2xl font-heading font-bold mb-4 text-white">FAIR PLAY</h3>
+          <h3 class="text-2xl font-heading font-bold mb-4 text-white">FAIR PLAY SYSTEM</h3>
           <p class="text-gray-400 leading-relaxed">
-            Strenges Anti-Cheat System und aktive Moderation sorgen für ein faires Spielumfeld für alle.
+            Modernes Anti-Cheat, aktive Moderation und transparentes Regelwerk. Fairplay für alle Spieler.
           </p>
         </div>
 
         <!-- Feature 5 -->
-        <div class="card-hover bg-mc-dark/80 backdrop-blur-sm rounded-2xl p-8 cyber-border fade-in group" style="animation-delay: 0.4s">
-          <div class="w-16 h-16 bg-gradient-to-br from-gold to-gold-dark rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-            <span class="text-2xl">🚀</span>
+        <div class="card-hover rp-section p-8 fade-in group" style="animation-delay: 0.4s">
+          <div class="feature-icon group-hover:scale-110 transition-transform duration-300">
+            <span class="text-white">🚀</span>
           </div>
           <h3 class="text-2xl font-heading font-bold mb-4 text-white">REGELMÄSSIGE UPDATES</h3>
           <p class="text-gray-400 leading-relaxed">
-            Ständige Erweiterungen und Verbesserungen basierend auf Community-Feedback. Deine Ideen zählen!
+            Wöchentliche Updates, neue Features und Content-Erweiterungen basierend auf Community-Feedback.
           </p>
         </div>
 
         <!-- Feature 6 -->
-        <div class="card-hover bg-mc-dark/80 backdrop-blur-sm rounded-2xl p-8 cyber-border fade-in group" style="animation-delay: 0.5s">
-          <div class="w-16 h-16 bg-gradient-to-br from-gold to-gold-dark rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-            <span class="text-2xl">🎯</span>
+        <div class="card-hover rp-section p-8 fade-in group" style="animation-delay: 0.5s">
+          <div class="feature-icon group-hover:scale-110 transition-transform duration-300">
+            <span class="text-white">🎯</span>
           </div>
           <h3 class="text-2xl font-heading font-bold mb-4 text-white">PROFESSIONELLES TEAM</h3>
           <p class="text-gray-400 leading-relaxed">
-            Erfahrene Entwickler und Supporter stehen rund um die Uhr für deine Anliegen zur Verfügung.
+            Erfahrene Entwickler, professionelle Supporter und aktive Administration rund um die Uhr verfügbar.
           </p>
         </div>
       </div>
@@ -360,74 +452,97 @@
     
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16 fade-in">
-        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6 cyber-glow">
-          REGEL<span class="text-gold">WERK</span>
+        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">
+          SERVER<span class="text-primary cyber-glow"> REGELN</span>
         </h2>
         <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-          Fairplay und Respekt stehen an erster Stelle. Hier findest du die wichtigsten Regeln für ein optimales Roleplay-Erlebnis.
+          Für ein faires und unterhaltsames Spielerlebnis gelten bei uns klare Regeln. Bitte beachte diese vor deinem Beitritt.
         </p>
       </div>
 
       <div class="grid lg:grid-cols-2 gap-8">
         <!-- Quick Rules -->
         <div class="fade-in">
-          <div class="bg-mc-dark/80 backdrop-blur-sm rounded-2xl p-8 cyber-border h-full">
-            <h3 class="text-2xl font-heading font-bold mb-6 text-gold">📋 SCHNELLÜBERSICHT</h3>
+          <div class="rp-section p-8 h-full">
+            <h3 class="text-2xl font-heading font-bold mb-6 text-primary">📋 BASIS REGELN</h3>
             <div class="space-y-4">
-              <div class="flex items-center gap-4 p-4 bg-black/30 rounded-lg">
-                <div class="w-10 h-10 bg-gold/20 rounded-lg flex items-center justify-center">
-                  <span class="text-gold">🔞</span>
+              <div class="flex items-center gap-4 p-4 bg-secondary/50 rounded-lg">
+                <div class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                  <span class="text-primary">🔞</span>
                 </div>
                 <div>
                   <div class="font-semibold text-white">Mindestalter</div>
-                  <div class="text-gray-400 text-sm">18+ Jahre</div>
+                  <div class="text-gray-400 text-sm">18+ Jahre (Ausnahmen möglich)</div>
                 </div>
               </div>
               
-              <div class="flex items-center gap-4 p-4 bg-black/30 rounded-lg">
-                <div class="w-10 h-10 bg-gold/20 rounded-lg flex items-center justify-center">
-                  <span class="text-gold">🇩🇪</span>
+              <div class="flex items-center gap-4 p-4 bg-secondary/50 rounded-lg">
+                <div class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                  <span class="text-primary">🎤</span>
                 </div>
                 <div>
-                  <div class="font-semibold text-white">Sprache</div>
-                  <div class="text-gray-400 text-sm">Deutsch</div>
+                  <div class="font-semibold text-white">Mikrofon</div>
+                  <div class="text-gray-400 text-sm">Gute Audioqualität erforderlich</div>
                 </div>
               </div>
 
+              <div class="flex items-center gap-4 p-4 bg-secondary/50 rounded-lg">
+                <div class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                  <span class="text-primary">🇩🇪</span>
+                </div>
+                <div>
+                  <div class="font-semibold text-white">Sprache</div>
+                  <div class="text-gray-400 text-sm">Deutsch (fließend)</div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4 p-4 bg-secondary/50 rounded-lg">
+                <div class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                  <span class="text-primary">💻</span>
+                </div>
+                <div>
+                  <div class="font-semibold text-white">System</div>
+                  <div class="text-gray-400 text-sm">GTA V Legal + FiveM Client</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Detailed Rules -->
         <div class="fade-in" style="animation-delay: 0.1s">
-          <div class="bg-mc-dark/80 backdrop-blur-sm rounded-2xl p-8 cyber-border h-full">
-            <h3 class="text-2xl font-heading font-bold mb-6 text-gold">⚖️ WICHTIGE REGELN</h3>
+          <div class="rp-section p-8 h-full">
+            <h3 class="text-2xl font-heading font-bold mb-6 text-primary">⚖️ WICHTIGE REGELN</h3>
             <div class="space-y-4">
-              <div class="p-4 bg-black/30 rounded-lg border-l-4 border-gold">
+              <div class="p-4 bg-secondary/50 rounded-lg border-l-4 border-primary">
                 <h4 class="font-bold text-white mb-2">Realismus & Respekt</h4>
-                <p class="text-gray-400 text-sm">Spiele deinen Charakter glaubwürdig und behandle andere Spieler mit Respekt. Kein Power-RP oder Fail-RP.</p>
+                <p class="text-gray-400 text-sm">Charaktere müssen glaubwürdig gespielt werden. Kein Power-RP, Meta-Gaming oder OOC-Beziehungen im RP.</p>
               </div>
               
-              <div class="p-4 bg-black/30 rounded-lg border-l-4 border-gold">
+              <div class="p-4 bg-secondary/50 rounded-lg border-l-4 border-primary">
                 <h4 class="font-bold text-white mb-2">Roleplay Grundlagen</h4>
-                <p class="text-gray-400 text-sm">Jede Aktion benötigt eine RP-Grundlage. Kein RDM/VDM. NLR wird strikt durchgesetzt.</p>
+                <p class="text-gray-400 text-sm">Kein RDM/VDM. NLR (New Life Rule) wird strikt durchgesetzt. Jede Aktion benötigt RP-Grundlage.</p>
               </div>
               
-              <div class="p-4 bg-black/30 rounded-lg border-l-4 border-gold">
+              <div class="p-4 bg-secondary/50 rounded-lg border-l-4 border-primary">
                 <h4 class="font-bold text-white mb-2">Kommunikation</h4>
-                <p class="text-gray-400 text-sm">Mikrofon-Pflicht in RP-Situationen. Klare Verständlichkeit ist Voraussetzung.</p>
+                <p class="text-gray-400 text-sm">TeamSpeak 3 Pflicht für Fraktionen. Klare Verständlichkeit im Voice-Chat ist Voraussetzung.</p>
               </div>
               
-              <div class="p-4 bg-black/30 rounded-lg border-l-4 border-gold">
+              <div class="p-4 bg-secondary/50 rounded-lg border-l-4 border-primary">
                 <h4 class="font-bold text-white mb-2">Technische Regeln</h4>
-                <p class="text-gray-400 text-sm">Keine Cheats, Mods oder Exploits. Supportfälle nur mit vollständigem Videobeweis.</p>
+                <p class="text-gray-400 text-sm">Keine Cheats, Mods oder Exploits. Supportfälle nur mit vollständigem Videobeweis bearbeitet.</p>
               </div>
             </div>
             
-            <div class="mt-8 p-4 bg-gold/10 rounded-lg border border-gold/30">
-              <p class="text-gold text-sm text-center">
-                💡 Das vollständige Regelwerk findest du in unserem Discord-Server
+            <div class="mt-8 p-4 bg-primary/10 rounded-lg border border-primary/30">
+              <p class="text-primary text-sm text-center">
+                📖 Das vollständige Regelwerk umfasst alle Details und Feinheiten
               </p>
-              <a href="https://discord.gg/kXMQFuXBtJ" target="_blank"
-                 class="block w-full mt-3 px-6 py-3 bg-gold text-black font-bold rounded-lg hover:shadow-lg transition-all text-center">
-                ZUM VOLLSTÄNDIGEN REGELWERK
-              </a>
+              <button onclick="openRulesModal()"
+                 class="block w-full mt-3 px-6 py-3 bg-gradient-to-r from-primary to-primary-dark text-white font-bold rounded-lg hover:shadow-lg transition-all text-center">
+                VOLLSTÄNDIGES REGELWERK ÖFFNEN
+              </button>
             </div>
           </div>
         </div>
@@ -435,37 +550,52 @@
     </div>
   </section>
 
-  <!-- STATS SECTION -->
-  <section id="stats" class="py-24 px-6 relative">
+  <!-- JOIN SECTION -->
+  <section id="join" class="py-24 px-6 relative">
     <div class="section-divider my-16"></div>
     
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16 fade-in">
-        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6 cyber-glow">
-          IN <span class="text-gold">ZAHLEN</span>
+        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">
+          BEITRITTS<span class="text-primary cyber-glow"> PROZESS</span>
         </h2>
         <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-          Vertrauen durch Transparenz. Hier siehst du, was unsere Community ausmacht.
+          Werde Teil unserer Community in wenigen einfachen Schritten.
         </p>
       </div>
 
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="grid md:grid-cols-3 gap-8">
         <div class="text-center fade-in">
-          <div class="text-4xl lg:text-5xl font-bold text-gold mb-2 stats-counter" data-target="0">0</div>
-          <div class="text-gray-400 uppercase tracking-wider text-sm">Community Mitglieder</div>
+          <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl text-primary">1</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Discord Beitritt</h3>
+          <p class="text-gray-400">Trete unserem Discord bei und lies die Regeln</p>
         </div>
+
         <div class="text-center fade-in" style="animation-delay: 0.1s">
-          <div class="text-4xl lg:text-5xl font-bold text-gold mb-2 stats-counter" data-target="99">0</div>
-          <div class="text-gray-400 uppercase tracking-wider text-sm">Server Stabilität</div>
+          <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl text-primary">2</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Whitelist Bewerbung</h3>
+          <p class="text-gray-400">Stelle deinen Charakter im Bewerbungs-Channel vor</p>
         </div>
+
         <div class="text-center fade-in" style="animation-delay: 0.2s">
-          <div class="text-4xl lg:text-5xl font-bold text-gold mb-2 stats-counter" data-target="24">0</div>
-          <div class="text-gray-400 uppercase tracking-wider text-sm">/7 Support</div>
+          <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl text-primary">3</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Starten</h3>
+          <p class="text-gray-400">Nach Freischaltung direkt auf dem Server spielen</p>
         </div>
-        <div class="text-center fade-in" style="animation-delay: 0.3s">
-          <div class="text-4xl lg:text-5xl font-bold text-gold mb-2 stats-counter" data-target="0">0</div>
-          <div class="text-gray-400 uppercase tracking-wider text-sm">Aktive Fraktionen</div>
-        </div>
+      </div>
+
+      <div class="mt-12 text-center fade-in" style="animation-delay: 0.3s">
+        <a href="https://discord.gg/megacity" target="_blank"
+           class="inline-block px-12 py-4 bg-gradient-to-r from-primary to-primary-dark text-white font-bold rounded-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 text-xl cyber-border">
+          DISCORD BEITRETEN
+        </a>
+        <p class="text-gray-400 text-sm mt-4">Server IP: connect mega-city-rp.de</p>
       </div>
     </div>
   </section>
@@ -476,8 +606,8 @@
     
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16 fade-in">
-        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6 cyber-glow">
-          UNSER <span class="text-gold">TEAM</span>
+        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">
+          UNSER <span class="text-primary cyber-glow">TEAM</span>
         </h2>
         <p class="text-xl text-gray-400 max-w-3xl mx-auto">
           Hinter Mega City RP steht ein engagiertes Team von Experten, die täglich daran arbeiten, dein Roleplay-Erlebnis zu perfektionieren.
@@ -485,133 +615,189 @@
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="card-hover bg-mc-dark/80 backdrop-blur-sm rounded-2xl p-8 cyber-border text-center fade-in">
-          <div class="w-20 h-20 bg-gradient-to-br from-gold to-gold-dark rounded-full flex items-center justify-center mx-auto mb-6">
-            <span class="text-2xl">👑</span>
+        <div class="card-hover rp-section p-8 text-center fade-in">
+          <div class="w-20 h-20 bg-gradient-to-br from-primary to-primary-light rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl text-white">👑</span>
           </div>
           <h3 class="text-2xl font-heading font-bold mb-3 text-white">PROJEKTLEITUNG</h3>
           <p class="text-gray-400 mb-4">Verantwortlich für Vision und Strategie</p>
-          <div class="text-gold text-sm font-semibold">@Discord-Name</div>
+          <div class="text-primary text-sm font-semibold">@Alexander_MCRP</div>
         </div>
 
-        <div class="card-hover bg-mc-dark/80 backdrop-blur-sm rounded-2xl p-8 cyber-border text-center fade-in" style="animation-delay: 0.1s">
-          <div class="w-20 h-20 bg-gradient-to-br from-gold to-gold-dark rounded-full flex items-center justify-center mx-auto mb-6">
-            <span class="text-2xl">🛠️</span>
+        <div class="card-hover rp-section p-8 text-center fade-in" style="animation-delay: 0.1s">
+          <div class="w-20 h-20 bg-gradient-to-br from-primary to-primary-light rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl text-white">🛠️</span>
           </div>
           <h3 class="text-2xl font-heading font-bold mb-3 text-white">ENTWICKLUNG</h3>
           <p class="text-gray-400 mb-4">Technische Umsetzung & Scripting</p>
-          <div class="text-gold text-sm font-semibold">@Discord-Name</div>
+          <div class="text-primary text-sm font-semibold">@Dev_Max_MCRP</div>
         </div>
 
-        <div class="card-hover bg-mc-dark/80 backdrop-blur-sm rounded-2xl p-8 cyber-border text-center fade-in" style="animation-delay: 0.2s">
-          <div class="w-20 h-20 bg-gradient-to-br from-gold to-gold-dark rounded-full flex items-center justify-center mx-auto mb-6">
-            <span class="text-2xl">🛡️</span>
+        <div class="card-hover rp-section p-8 text-center fade-in" style="animation-delay: 0.2s">
+          <div class="w-20 h-20 bg-gradient-to-br from-primary to-primary-light rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl text-white">🛡️</span>
           </div>
           <h3 class="text-2xl font-heading font-bold mb-3 text-white">SUPPORT TEAM</h3>
           <p class="text-gray-400 mb-4">Hilfe bei Fragen & Regelverstößen</p>
-          <div class="text-gold text-sm font-semibold">@Discord-Name</div>
-        </div>
-      </div>
-
-      <!-- Contact Info -->
-      <div class="mt-16 text-center fade-in" style="animation-delay: 0.3s">
-        <div class="bg-mc-dark/80 backdrop-blur-sm rounded-2xl p-8 cyber-border max-w-2xl mx-auto">
-          <h3 class="text-2xl font-heading font-bold mb-4 text-gold">📞 KONTAKT & SUPPORT</h3>
-          <p class="text-gray-400 mb-6">
-            Bei Fragen oder Problemen stehen wir dir gerne zur Verfügung. Unser Support-Team ist rund um die Uhr erreichbar.
-          </p>
-          <div class="grid md:grid-cols-2 gap-4 text-left max-w-md mx-auto">
-            <div class="flex items-center gap-3 p-3 bg-black/30 rounded-lg">
-              <span class="text-2xl text-gold">🎮</span>
-              <div>
-                <div class="text-white font-semibold">Server IP</div>
-                <div class="text-gray-400 text-sm">connect mega.city</div>
-              </div>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-black/30 rounded-lg">
-              <span class="text-2xl text-gold">💬</span>
-              <div>
-                <div class="text-white font-semibold">Support</div>
-                <div class="text-gray-400 text-sm">Ticket im Discord</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA SECTION -->
-  <section class="py-20 px-6 relative">
-    <div class="max-w-4xl mx-auto text-center fade-in">
-      <div class="bg-gradient-to-r from-gold/10 to-gold-dark/10 rounded-3xl p-12 cyber-border">
-        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6 cyber-glow">
-          BEREIT FÜR DAS <span class="text-gold">ABENTEUER?</span>
-        </h2>
-        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-          Trete noch heute bei und werde Teil der Mega City RP Community. Deine Reise beginnt hier.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="https://discord.gg/megacity" target="_blank"
-             class="px-8 py-4 bg-gradient-to-r from-gold to-gold-dark text-black font-bold rounded-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 text-lg cyber-border">
-            JETZT BEITRETEN
-          </a>
-          <a href="#rules"
-             class="px-8 py-4 border-2 border-gold/50 text-gold font-bold rounded-lg hover:bg-gold/10 transition-all duration-300 text-lg">
-            REGELN LESEN
-          </a>
+          <div class="text-primary text-sm font-semibold">@Support_Team_MCRP</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="border-t border-gold/20 py-12 bg-black/80 backdrop-blur-sm">
+  <footer class="border-t border-primary/20 py-12 bg-secondary/80 backdrop-blur-sm">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid md:grid-cols-4 gap-8 mb-8">
         <div class="md:col-span-2">
           <div class="flex items-center gap-3 mb-4">
             <img src="mlogo42.png" alt="Mega City RP Logo" class="h-10 w-10 rounded-lg object-cover cyber-border" />
             <div>
-              <div class="text-xl font-heading font-bold cyber-glow">MEGA CITY RP</div>
+              <div class="text-xl font-heading font-bold">MEGA CITY RP</div>
+              <div class="text-xs text-gray-400">Premium Roleplay Server</div>
             </div>
           </div>
           <p class="text-gray-400 text-sm max-w-md">
-            Deutschlands führender GTA V Roleplay Server. Realistisch, fair und mit herausragender Performance.
+            Der führende GTA V Roleplay Server im deutschsprachigen Raum. Professionelles Roleplay mit Fokus auf Realismus und Community.
           </p>
         </div>
         
         <div>
           <h4 class="text-white font-heading font-bold mb-4">LINKS</h4>
           <div class="space-y-2">
-            <a href="#features" class="block text-gray-400 hover:text-gold transition text-sm">Features</a>
-            <a href="#rules" class="block text-gray-400 hover:text-gold transition text-sm">Regelwerk</a>
-            <a href="#team" class="block text-gray-400 hover:text-gold transition text-sm">Team</a>
-            <a href="#stats" class="block text-gray-400 hover:text-gold transition text-sm">Statistiken</a>
+            <a href="#features" class="block text-gray-400 hover:text-primary transition text-sm">Features</a>
+            <a href="#rules" class="block text-gray-400 hover:text-primary transition text-sm">Regelwerk</a>
+            <a href="#team" class="block text-gray-400 hover:text-primary transition text-sm">Team</a>
+            <button onclick="openRulesModal()" class="block text-gray-400 hover:text-primary transition text-sm text-left">Vollständiges Regelwerk</button>
           </div>
         </div>
         
         <div>
           <h4 class="text-white font-heading font-bold mb-4">KONTAKT</h4>
           <div class="space-y-2">
-            <a href="https://discord.gg/kXMQFuXBtJ" target="_blank" class="block text-gray-400 hover:text-gold transition text-sm">Discord Server</a>
-            <div class="text-gray-400 text-sm">Server IP: mega.city</div>
-            <div class="text-gray-400 text-sm">Support: Discord Ticket</div>
+            <a href="https://discord.gg/megacity" target="_blank" class="block text-gray-400 hover:text-primary transition text-sm">Discord Server</a>
+            <div class="text-gray-400 text-sm">Server IP: connect mega-city-rp.de</div>
+            <div class="text-gray-400 text-sm">Support: Discord Ticket-System</div>
+            <button onclick="openCookieSettings()" class="text-gray-400 hover:text-primary transition text-sm text-left">Cookie Einstellungen</button>
           </div>
         </div>
       </div>
       
       <div class="border-t border-gray-800 pt-8 text-center">
         <p class="text-gray-500 text-sm">
-          © <span id="year"></span> Mega City RP • Alle Rechte vorbehalten • Made with ❤️ for the Roleplay Community
+          © <span id="year"></span> Mega City RP • Alle Rechte vorbehalten • Keine Verbindung zu Rockstar Games
         </p>
       </div>
     </div>
   </footer>
 
+  <!-- RULES MODAL -->
+  <div id="rulesModal" class="modal-overlay">
+    <div class="modal-content m-auto">
+      <div class="p-8">
+        <div class="flex justify-between items-center mb-8">
+          <h3 class="text-3xl font-heading font-bold text-primary">VOLLSTÄNDIGES REGELWERK</h3>
+          <button onclick="closeRulesModal()" class="text-gray-400 hover:text-white text-2xl">&times;</button>
+        </div>
+        
+        <div class="space-y-6 max-h-[60vh] overflow-y-auto pr-4">
+          <div class="rp-section p-6">
+            <h4 class="text-xl font-bold text-white mb-4">§1 ALLGEMEINE REGELN</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>• Mindestalter: 18 Jahre (Ausnahmen nach Absprache)</li>
+              <li>• Deutschkenntnisse: Fließend in Wort und Schrift</li>
+              <li>• Mikrofon: Gute Audioqualität erforderlich</li>
+              <li>• GTA V: Legale Kopie erforderlich</li>
+              <li>• Respektvoller Umgang mit allen Spielern</li>
+            </ul>
+          </div>
+
+          <div class="rp-section p-6">
+            <h4 class="text-xl font-bold text-white mb-4">§2 ROLEPLAY REGELN</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>• Charakter muss realistisch und konsistent gespielt werden</li>
+              <li>• Kein Power-RP (Übermacht ausnutzen)</li>
+              <li>• Kein Fail-RP (Unrealistisches Verhalten)</li>
+              <li>• NLR (New Life Rule): Nach Tod keine Erinnerung an vorherige Situation</li>
+              <li>• Kein Meta-Gaming (OOC-Informationen im RP nutzen)</li>
+              <li>• Kein RDM (Random Deathmatch) oder VDM (Vehicle Deathmatch)</li>
+            </ul>
+          </div>
+
+          <div class="rp-section p-6">
+            <h4 class="text-xl font-bold text-white mb-4">§3 FRAKTIONEN & GANGS</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>• Mindestgröße für Gang-Gründung: 5 aktive Mitglieder</li>
+              <li>• Bewerbung über Discord erforderlich</li>
+              <li>• Fraktionsinterne Hierarchien müssen eingehalten werden</li>
+              <li>• Aktive Teilnahme am RP erforderlich</li>
+              <li>• TeamSpeak 3 Pflicht für Fraktionsmitglieder</li>
+            </ul>
+          </div>
+
+          <div class="rp-section p-6">
+            <h4 class="text-xl font-bold text-white mb-4">§4 WHITELIST & BEWERBUNG</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>• Vollständige Charaktervorstellung erforderlich</li>
+              <li>• Keine Copy-Paste Bewerbungen</li>
+              <li>• Wartezeit nach Ablehnung: 7 Tage</li>
+              <li>• Einmalige Änderung des Charakters nach Freischaltung möglich</li>
+              <li>• Aktivitätsprüfung nach 14 Tagen Inaktivität</li>
+            </ul>
+          </div>
+
+          <div class="rp-section p-6">
+            <h4 class="text-xl font-bold text-white mb-4">§5 SUPPORT & MODERATION</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>• Support nur über Discord-Ticket-System</li>
+              <li>• Videobeweis bei Regelverstößen erforderlich</li>
+              <li>• Entscheidungen des Teams sind endgültig</li>
+              <li>• Keine Diskussionen über Strafen im öffentlichen Chat</li>
+              <li>• Beschwerden über Teammitglieder per DM an Projektleitung</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-primary/30">
+          <div class="flex justify-between items-center">
+            <p class="text-gray-400 text-sm">Zuletzt aktualisiert: <span id="rulesDate"></span></p>
+            <button onclick="closeRulesModal()" 
+                    class="px-6 py-2 bg-primary text-white font-bold rounded-lg hover:bg-primary-dark transition-all">
+              Schließen
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COOKIE BANNER -->
+  <div id="cookieBanner" class="cookie-banner">
+    <div class="flex flex-col md:flex-row md:items-center gap-4">
+      <div class="flex-1">
+        <h4 class="font-bold text-white mb-2">🍪 Cookie-Einstellungen</h4>
+        <p class="text-gray-300 text-sm">
+          Wir verwenden Cookies, um deine Erfahrung zu verbessern. Durch die Nutzung unserer Seite stimmst du unserer 
+          <a href="#" class="text-primary hover:underline">Datenschutzerklärung</a> zu.
+        </p>
+      </div>
+      <div class="flex gap-3">
+        <button onclick="acceptCookies()" 
+                class="px-4 py-2 bg-primary text-white text-sm font-bold rounded-lg hover:bg-primary-dark transition-all">
+          Alle akzeptieren
+        </button>
+        <button onclick="declineCookies()" 
+                class="px-4 py-2 border border-gray-600 text-gray-300 text-sm font-bold rounded-lg hover:bg-gray-800 transition-all">
+          Nur notwendige
+        </button>
+      </div>
+    </div>
+  </div>
+
   <script>
     // Current Year
     document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('rulesDate').textContent = new Date().toLocaleDateString('de-DE');
     
     // Mobile Menu
     document.getElementById('mobileBtn').addEventListener('click', () => {
@@ -639,12 +825,11 @@
     
     window.addEventListener('scroll', () => {
       if (window.scrollY > 100) {
-        navbar.classList.add('bg-black/95', 'shadow-xl');
+        navbar.classList.add('bg-secondary-dark/95', 'shadow-xl');
       } else {
-        navbar.classList.remove('bg-black/95', 'shadow-xl');
+        navbar.classList.remove('bg-secondary-dark/95', 'shadow-xl');
       }
       
-      // Hide navbar when scrolling down
       if (window.scrollY > lastScrollY && window.scrollY > 200) {
         navbar.style.transform = 'translateY(-100%)';
       } else {
@@ -704,9 +889,69 @@
         }
       });
     });
-  </script>
-</body>
-</html>
+    
+    // Rules Modal Functions
+    function openRulesModal() {
+      document.getElementById('rulesModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeRulesModal() {
+      document.getElementById('rulesModal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Close modal on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeRulesModal();
+      }
+    });
+    
+    // Close modal on outside click
+    document.getElementById('rulesModal').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('rulesModal')) {
+        closeRulesModal();
+      }
+    });
+    
+    // Cookie Functions
+    function checkCookies() {
+      if (!localStorage.getItem('cookiesAccepted')) {
+        setTimeout(() => {
+          document.getElementById('cookieBanner').classList.add('active');
+        }, 1000);
+      }
+    }
+    
+    function acceptCookies() {
+      localStorage.setItem('cookiesAccepted', 'true');
+      localStorage.setItem('cookiesNecessary', 'true');
+      localStorage.setItem('cookiesAnalytics', 'true');
+      document.getElementById('cookieBanner').classList.remove('active');
+    }
+    
+    function declineCookies() {
+      localStorage.setItem('cookiesAccepted', 'true');
+      localStorage.setItem('cookiesNecessary', 'true');
+      localStorage.setItem('cookiesAnalytics', 'false');
+      document.getElementById('cookieBanner').classList.remove('active');
+    }
+    
+    function openCookieSettings() {
+      alert('Cookie Einstellungen:\nNotwendige: Aktiv\nAnalytics: ' + 
+            (localStorage.getItem('cookiesAnalytics') === 'true' ? 'Aktiv' : 'Inaktiv') +
+            '\n\nÄndere Einstellungen in den Browser-Einstellungen.');
+    }
+    
+    // Initialize
+    checkCookies();
+    
+    // Preloader simulation
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        animateCounters();
+      }, 500);
     });
   </script>
 </body>
